@@ -1,17 +1,17 @@
+import { AssetServerPlugin } from "@vendure/asset-server-plugin";
 import {
-  dummyPaymentHandler,
   DefaultJobQueuePlugin,
   DefaultSchedulerPlugin,
   DefaultSearchPlugin,
+  dummyPaymentHandler,
   VendureConfig,
 } from "@vendure/core";
+import { DashboardPlugin } from "@vendure/dashboard/plugin";
 import {
   defaultEmailHandlers,
   EmailPlugin,
   FileBasedTemplateLoader,
 } from "@vendure/email-plugin";
-import { AssetServerPlugin } from "@vendure/asset-server-plugin";
-import { DashboardPlugin } from "@vendure/dashboard/plugin";
 import { GraphiqlPlugin } from "@vendure/graphiql-plugin";
 import "dotenv/config";
 import path from "path";
@@ -20,8 +20,8 @@ const IS_DEV = process.env.APP_ENV === "dev";
 const serverPort = +process.env.PORT || 3000;
 
 export const config: VendureConfig = {
-  schedulerOptions:{
-    runTasksInWorkerOnly:false
+  schedulerOptions: {
+    runTasksInWorkerOnly: false,
   },
   apiOptions: {
     port: serverPort,
@@ -72,7 +72,9 @@ export const config: VendureConfig = {
       // For local dev, the correct value for assetUrlPrefix should
       // be guessed correctly, but for production it will usually need
       // to be set manually to match your production url.
-      assetUrlPrefix: IS_DEV ? undefined : "https://www.almora-shop.com/assets/",
+      assetUrlPrefix: IS_DEV
+        ? undefined
+        : "https://www.almora-shop.com/assets/",
     }),
     DefaultSchedulerPlugin.init(),
     DefaultJobQueuePlugin.init({ useDatabaseForBuffer: true }),
@@ -83,7 +85,7 @@ export const config: VendureConfig = {
       route: "mailbox",
       handlers: defaultEmailHandlers,
       templateLoader: new FileBasedTemplateLoader(
-        path.join(__dirname, "../static/email/templates"),
+        path.join(__dirname, "../static/email/templates")
       ),
       globalTemplateVars: {
         // The following variables will change depending on your storefront implementation.

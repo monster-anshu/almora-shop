@@ -1,5 +1,5 @@
 {
-  "name": "almora-shop",
+  "name": "almora-shop-backend",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,7 +9,8 @@
     "build": "tsc",
     "start:server": "node ./dist/index.js",
     "start:worker": "node ./dist/index-worker.js",
-    "start": "concurrently npm:start:*"
+    "start": "concurrently npm:start:*",
+    "admin": "vite"
   },
   "dependencies": {
     "@vendure/asset-server-plugin": "^3.5.0",
@@ -19,7 +20,8 @@
     "@vendure/graphiql-plugin": "3.5.0",
     "dotenv": "17.2.3",
     "fs-extra": "^11.3.2",
-    "pg": "8.16.3"
+    "pg": "8.16.3",
+    "vite": "^7.2.2"
   },
   "devDependencies": {
     "@vendure/cli": "3.5.0",
@@ -27,6 +29,7 @@
     "@vitejs/plugin-react-swc": "^4.2.1",
     "concurrently": "9.2.1",
     "prettier": "^3.6.2",
+    "ts-node": "^10.9.2",
     "typescript": "5.8.2"
   },
   "overrides": {

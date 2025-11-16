@@ -1,0 +1,21 @@
+{
+  "name": "almora-shop",
+  "packageManager": "pnpm@10.16.1",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "format": "prettier -w .",
+    "build": "pnpm -r run build",
+    "codegen": "pnpm --filter almora-shop-ui codegen",
+    "dev:admin": "pnpm --filter almora-shop-backend admin",
+    "dev:backend": "pnpm --filter almora-shop-backend dev",
+    "dev:ui": "pnpm --filter almora-shop-ui dev",
+    "lint": "pnpm --filter almora-shop-ui lint",
+    "start": "pnpm --filter almora-shop-ui start"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "prettier-plugin-organize-imports": "^4.3.0",
+    "prettier-plugin-tailwindcss": "^0.7.1"
+  }
+}

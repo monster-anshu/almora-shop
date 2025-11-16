@@ -1,0 +1,13 @@
+packages:
+  - almora-shop-ui
+  - almora-shop-backend
+
+onlyBuiltDependencies:
+  - "@apollo/protobufjs"
+  - "@nestjs/core"
+  - "@parcel/watcher"
+  - "@swc/core"
+  - bcrypt
+  - esbuild
+  - sharp
+  - unrs-resolver
